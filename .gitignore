@@ -1,4 +1,5 @@
-
-.idea/modules.xml
-
-.idea/workspace.xml
+logs/*
+!.gitkeep
+tmp
+.DS_Store
+.idea
