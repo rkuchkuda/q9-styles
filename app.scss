@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+
+// Variables
+// --------------------------------------------------
+$main-app-color: #00abfb;
+$main-app-color-light: #19b3fb;
+$main-app-color-dark: #0099e1;
+
+$success-color: #58cb03;
+$success-color-light: #68d01d;
+$success-color-dark: #4fb603;
+
+$error-color: #ff4c63;
+$error-color-light: #ff5d72;
+$error-color-dark: #e54459;
+
+$text-color: #2e4a57;
+
+$inactive-color: #d5dbdd;
+$inactive-color-light: #fafbfb;
+$inactive-color-dark: #ccd3d6;
+
+$background-color: #fff;
+
+$font-family-main: 'Roboto', sans-serif;
+
+// Mixins
+// --------------------------------------------------
+@mixin transition($transition...) {
+  -webkit-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin box-sizing($boxmodel) {
+  -webkit-box-sizing: $boxmodel;
+  -moz-box-sizing: $boxmodel;
+  box-sizing: $boxmodel;
+}
+@mixin placeholder($color) {
+  // Firefox
+  &::-moz-placeholder {
+    color: $color;
+    opacity: 1; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &:-ms-input-placeholder { color: $color; } // Internet Explorer 10+
+  &::-webkit-input-placeholder  { color: $color; } // Safari and Chrome
+}
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+  -moz-user-select: $select;
+  -ms-user-select: $select; // IE10+
+  user-select: $select;
+}
+
+// Forms
+// --------------------------------------------------
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  min-width: 0;
+}
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: inherit;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+label {
+  display: inline-block;
+  max-width: 100%;
+}
+input[type="search"] {
+  @include box-sizing(border-box);
+}
+
+// Common form controls
+//
+// Shared size and type resets for form controls. Apply `.q9-form-control` to any
+// of the following form controls:
+//
+// input[type="text"]
+// input[type="password"]
+// input[type="number"]
+// input[type="email"]
+// input[type="url"]
+// input[type="search"]
+// input[type="tel"]
+
+.q9-form-control {
+  display: block;
+  width: 100%;
+  height: 30px; // Make inputs at least the height of their button counterpart (base line-height + padding + border)
+  padding: 10px;
+  font-size: 14px;
+  line-height: 20px;
+  color: $text-color;
+  background-color: $background-color;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid #d5dbdd;
+  border-radius: 3px; // Note: This has no effect on <select>s in some browsers, due to the limited stylability of <select>s in CSS.
+  text-overflow: ellipsis;
+  @include transition(border-color ease-in-out .3s);
+
+  &:hover {
+    border-color: $inactive-color-dark;
+  }
+
+  &:focus {
+    border-color: $main-app-color;
+    outline: 0;
+    + .q9-help-msg {
+      color: $main-app-color;
+    }
+  }
+
+  // Placeholder
+  @include placeholder($inactive-color);
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  &[readonly],
+  fieldset[disabled] & {
+    background-color: $inactive-color-light;
+    border-color: $inactive-color-dark;
+    opacity: 1; // iOS fix for unreadable disabled content; see https://github.com/twbs/bootstrap/issues/11655
+  }
+
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+  }
+}
+
+// Form elements
+.q9-form-group {
+  margin-bottom: 16px;
+  font-family: $font-family-main;
+}
+.q9-input-label {
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $text-color;
+}
+.q9-help-msg {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-align: left;
+  color: $inactive-color;
+  @include transition(color ease-in-out .3s);
+}
+.q9-has-error .q9-form-control {
+  border-color: $error-color-dark;
+}
+.q9-has-error .q9-form-control + .q9-help-msg,
+.q9-has-error .q9-help-msg {
+  color: $error-color-dark;
+}
+.q9-has-success .q9-form-control + .q9-help-msg,
+.q9-has-success .q9-help-msg {
+  color: $success-color-dark;
+}
+
+// Headings
+// --------------------------------------------------
+.q9-h1, .q9-h2, .q9-h3, .q9-h4, .q9-h5, .q9-h6 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: $text-color;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+}
+.q9-h1 {
+  font-size: 22px;
+  font-weight: normal;
+  line-height: 1.27;
+}
+.q9-h2 {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.4;
+}
+.q9-h3 {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.43;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.q9-h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.38;
+}
+.q9-h5 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+.q9-h6 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+}
+
+// Buttons
+// --------------------------------------------------
+
+// Base styles
+.q9-btn {
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: $main-app-color;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid $main-app-color;
+  white-space: nowrap;
+  letter-spacing: .5px;
+  outline: 0;
+  @include user-select(none);
+  @include transition(border-color ease-in-out .3s, background-color ease-in-out .3s, color ease-in-out .3s);
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $main-app-color-light;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    background-color: $main-app-color-dark;
+    color: #fff;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $inactive-color;
+    border-color: $inactive-color;
+    cursor: not-allowed;
+  }
+
+  // [converter] extracted a& to a.btn
+}
+
+a.btn {
+  &.disabled,
+  fieldset[disabled] & {
+    pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
+  }
+}
+// Light button
+.q9-btn.q9-btn-light {
+  background-color: #fff;
+  color: $main-app-color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $main-app-color-light;
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    background-color: $main-app-color-dark;
+    color: #fff;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: #fff;
+    border-color: $inactive-color;
+    color: $inactive-color;
+  }
+}
+
+.q9-btn.q9-btn-danger {
+  background-color: $error-color;
+  border-color: $error-color;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $error-color-light;
+    border-color: $error-color-light;
+    text-decoration: none;
+  }
+
+  &:active,
+  &.active {
+    background-color: $error-color-dark;
+    border-color: $error-color-dark;
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: $inactive-color;
+    border-color: $inactive-color;
+    color: #fff;
+  }
+}
+// Button Sizes
+.q9-btn.q9-btn-sm {
+  padding: 8px 16px;
+  font-weight: 500;
+  letter-spacing: normal;
+}
+.q9-btn.q9-btn-full-width {
+  display: block;
+  width: 100%;
+}
+
