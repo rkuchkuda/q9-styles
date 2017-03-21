@@ -243,9 +243,8 @@ input[type="search"] {
   touch-action: manipulation;
   cursor: pointer;
   border-radius: 4px;
-  background-color: $main-app-color;
   background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
-  border: 1px solid $main-app-color;
+  border: 1px solid transparent;
   white-space: nowrap;
   letter-spacing: .5px;
   outline: 0;
@@ -269,8 +268,6 @@ input[type="search"] {
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
-    background-color: $inactive-color;
-    border-color: $inactive-color;
     cursor: not-allowed;
   }
 
@@ -283,35 +280,29 @@ a.btn {
     pointer-events: none; // Future-proof disabling of clicks on `<a>` elements
   }
 }
-// Light button
-.q9-btn.q9-btn-light {
-  background-color: #fff;
-  color: $main-app-color;
+
+//Button colors default
+.q9-btn-default {
+  background-color: $main-app-color;
+  border-color: $main-app-color;
+  color: #fff;
 
   &:hover,
   &:focus,
   &.focus {
     background-color: $main-app-color-light;
-    color: #fff;
-    text-decoration: none;
+    border-color:  $main-app-color-light;
   }
 
   &:active,
   &.active {
-    background-color: $main-app-color-dark;
-    color: #fff;
+    background-color:  $main-app-color-dark;
+    border-color:  $main-app-color-dark;
   }
 
-  &.disabled,
-  &[disabled],
-  fieldset[disabled] & {
-    background-color: #fff;
-    border-color: $inactive-color;
-    color: $inactive-color;
-  }
 }
 
-.q9-btn.q9-btn-danger {
+.q9-btn-danger {
   background-color: $error-color;
   border-color: $error-color;
   color: #fff;
@@ -321,7 +312,6 @@ a.btn {
   &.focus {
     background-color: $error-color-light;
     border-color: $error-color-light;
-    text-decoration: none;
   }
 
   &:active,
@@ -329,7 +319,30 @@ a.btn {
     background-color: $error-color-dark;
     border-color: $error-color-dark;
   }
+}
 
+.q9-btn-success {
+  background-color: $success-color;
+  border-color: $success-color;
+  color: #fff;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $success-color-light;
+    border-color: $success-color-light;
+  }
+
+  &:active,
+  &.active {
+    background-color: $success-color-dark;
+    border-color: $success-color-dark;
+  }
+}
+
+.q9-btn-default,
+.q9-btn-danger,
+.q9-btn-success {
   &.disabled,
   &[disabled],
   fieldset[disabled] & {
@@ -338,14 +351,88 @@ a.btn {
     color: #fff;
   }
 }
-// Button Sizes
-.q9-btn.q9-btn-sm {
-  padding: 8px 16px;
-  font-weight: 500;
-  letter-spacing: normal;
-}
-.q9-btn.q9-btn-full-width {
-  display: block;
-  width: 100%;
+
+//Button colors light
+.q9-btn-default-light {
+  border-color: $main-app-color;
+  background-color: #fff;
+  color: $main-app-color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $main-app-color-light;
+    color: #fff;
+
+  }
+
+  &:active,
+  &.active {
+    background-color: $main-app-color-dark;
+    color: #fff;
+  }
 }
 
+.q9-btn-danger-light {
+  border-color: $error-color;
+  background-color: #fff;
+  color: $error-color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $error-color-light;
+    color: #fff;
+
+  }
+
+  &:active,
+  &.active {
+    background-color: $error-color-dark;
+    color: #fff;
+  }
+}
+
+.q9-btn-success-light {
+  border-color: $success-color;
+  background-color: #fff;
+  color: $success-color;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: $success-color-light;
+    color: #fff;
+  }
+
+  &:active,
+  &.active {
+    background-color: $success-color-dark;
+    color: #fff;
+  }
+}
+
+.q9-btn-default-light,
+.q9-btn-danger-light,
+.q9-btn-success-light {
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    background-color: #fff;
+    border-color: $inactive-color;
+    color: $inactive-color;
+  }
+}
+
+// Button Sizes
+.q9-btn {
+  &.q9-btn-sm {
+    padding: 8px 16px;
+    font-weight: 500;
+    letter-spacing: normal;
+  }
+  &.q9-btn-full-width {
+    display: block;
+    width: 100%;
+  }
+}
