@@ -3,3 +3,7 @@ logs/*
 tmp
 .DS_Store
 .idea
+
+.idea/modules.xml
+
+.idea/workspace.xml
