@@ -37,13 +37,14 @@ input[type="search"] {
   border: 1px solid #d5dbdd;
   border-radius: 3px;
   text-overflow: ellipsis;
+  -webkit-font-smoothing: antialiased;
   -webkit-transition: border-color ease-in-out 0.3s;
   -o-transition: border-color ease-in-out 0.3s;
   transition: border-color ease-in-out 0.3s; }
 .q9-form-control:hover {
   border-color: #c0c8cc; }
 .q9-form-control:focus {
-  border-color: #00abfb;
+  border: 1px solid #00abfb;
   outline: 0; }
 .q9-form-control:focus + .q9-help-msg {
   color: #00abfb; }
@@ -113,7 +114,8 @@ textarea.q9-form-control {
   font-family: inherit;
   font-style: normal;
   font-stretch: normal;
-  letter-spacing: normal; }
+  letter-spacing: normal;
+  -webkit-font-smoothing: antialiased; }
 
 .q9-h1 {
   font-size: 22px;
@@ -169,6 +171,7 @@ textarea.q9-form-control {
   white-space: nowrap;
   letter-spacing: .5px;
   outline: 0;
+  -webkit-font-smoothing: antialiased;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -191,45 +194,48 @@ fieldset[disabled] a.btn {
   background-color: #00abfb;
   border-color: #00abfb;
   color: #fff; }
+.q9-btn-default:focus {
+  color: #fff;
+  border: 1px solid #19b3fb; }
 .q9-btn-default:hover {
   background-color: #19b3fb;
-  border-color: #19b3fb;
-  color: #fff; }
-.q9-btn-default:focus {
+  border: 1px solid #19b3fb;
   color: #fff; }
 .q9-btn-default:active, .q9-btn-default.active {
   background-color: #0099e1;
-  border-color: #0099e1;
+  border: 1px solid #0099e1;
   color: #fff; }
 
 .q9-btn-danger {
   background-color: #ff4c63;
-  border-color: #ff4c63;
-  color: #fff; }
-.q9-btn-danger:hover {
-  background-color: #ff5d72;
-  border-color: #ff5d72;
+  border: 1px solid #ff4c63;
   color: #fff; }
 .q9-btn-danger:focus {
+  color: #fff;
+  border: 1px solid #ff4c63; }
+.q9-btn-danger:hover {
+  background-color: #ff5d72;
+  border: 1px solid #ff5d72;
   color: #fff; }
 .q9-btn-danger:active, .q9-btn-danger.active {
   background-color: #e54459;
-  border-color: #e54459;
+  border: 1px solid #e54459;
   color: #fff; }
 
 .q9-btn-success {
   background-color: #58cb03;
-  border-color: #58cb03;
+  border: 1px solid #58cb03;
+  color: #fff; }
+.q9-btn-success:focus {
+  border: 1px solid #58cb03;
   color: #fff; }
 .q9-btn-success:hover {
   background-color: #68d01d;
-  border-color: #68d01d;
-  color: #fff; }
-.q9-btn-success:focus {
+  border: 1px solid #68d01d;
   color: #fff; }
 .q9-btn-success:active, .q9-btn-success.active {
   background-color: #4fb603;
-  border-color: #4fb603;
+  border: 1px solid #4fb603;
   color: #fff; }
 
 .q9-btn-default,
@@ -252,41 +258,50 @@ fieldset[disabled]
   color: #fff; }
 
 .q9-btn-default-light {
-  border-color: #00abfb;
+  border: 1px solid #00abfb;
   background-color: transparent;
   color: #00abfb; }
+.q9-btn-default-light:focus {
+  color: #00abfb;
+  border: 1px solid #00abfb; }
 .q9-btn-default-light:hover {
+  border: 1px solid #19b3fb;
   background-color: #19b3fb;
   color: #fff; }
-.q9-btn-default-light:focus {
-  color: #00abfb; }
 .q9-btn-default-light:active, .q9-btn-default-light.active {
+  border: 1px solid #0099e1;
   background-color: #0099e1;
   color: #fff; }
 
 .q9-btn-danger-light {
-  border-color: #ff4c63;
+  border: 1px solid #ff4c63;
   background-color: transparent;
   color: #ff4c63; }
+.q9-btn-danger-light:focus {
+  border: 1px solid #ff4c63;
+  color: #ff4c63; }
 .q9-btn-danger-light:hover {
+  border: 1px solid #ff5d72;
   background-color: #ff5d72;
   color: #fff; }
-.q9-btn-danger-light:focus {
-  color: #ff4c63; }
 .q9-btn-danger-light:active, .q9-btn-danger-light.active {
+  border: 1px solid #e54459;
   background-color: #e54459;
   color: #fff; }
 
 .q9-btn-success-light {
-  border-color: #58cb03;
+  border: 1px solid #58cb03;
   background-color: transparent;
   color: #58cb03; }
+.q9-btn-success-light:focus {
+  border: 1px solid #58cb03;
+  color: #58cb03; }
 .q9-btn-success-light:hover {
+  border: 1px solid #68d01d;
   background-color: #68d01d;
   color: #fff; }
-.q9-btn-success-light:focus {
-  color: #58cb03; }
 .q9-btn-success-light:active, .q9-btn-success-light.active {
+  border: 1px solid #4fb603;
   background-color: #4fb603;
   color: #fff; }
 
@@ -314,6 +329,8 @@ fieldset[disabled]
   display: block;
   width: 100%; }
 
+.q9-tabset {
+  -webkit-font-smoothing: antialiased; }
 .q9-tabset .nav-tabs {
   border-bottom: 1px solid #dce1e4; }
 .q9-tabset .nav-tabs > li {
