@@ -287,58 +287,61 @@ a.btn {
   background-color: $main-app-color;
   border-color: $main-app-color;
   color: #fff;
+  &:focus {
+    color: #fff;
+    border: 1px solid $main-app-color-light;
+  }
   &:hover {
     background-color: $main-app-color-light;
-    border-color:  $main-app-color-light;
-    color: #fff;
-  }
-  &:focus {
+    border: 1px solid $main-app-color-light;
     color: #fff;
   }
   &:active,
   &.active {
     background-color:  $main-app-color-dark;
-    border-color:  $main-app-color-dark;
+    border: 1px solid  $main-app-color-dark;
     color: #fff;
   }
 }
 
 .q9-btn-danger {
   background-color: $error-color;
-  border-color: $error-color;
+  border: 1px solid $error-color;
   color: #fff;
+  &:focus {
+    color: #fff;
+    border: 1px solid $error-color;
+  }
   &:hover {
     background-color: $error-color-light;
-    border-color: $error-color-light;
-    color: #fff;
-  }
-  &:focus {
+    border: 1px solid $error-color-light;
     color: #fff;
   }
   &:active,
   &.active {
     background-color: $error-color-dark;
-    border-color: $error-color-dark;
+    border: 1px solid $error-color-dark;
     color: #fff;
   }
 }
 
 .q9-btn-success {
   background-color: $success-color;
-  border-color: $success-color;
+  border: 1px solid $success-color;
   color: #fff;
-  &:hover {
-    background-color: $success-color-light;
-    border-color: $success-color-light;
+  &:focus {
+    border: 1px solid $success-color;
     color: #fff;
   }
-  &:focus {
+  &:hover {
+    background-color: $success-color-light;
+    border: 1px solid $success-color-light;
     color: #fff;
   }
   &:active,
   &.active {
     background-color: $success-color-dark;
-    border-color: $success-color-dark;
+    border: 1px solid $success-color-dark;
     color: #fff;
   }
 }
@@ -359,54 +362,63 @@ a.btn {
 
 //Button colors light
 .q9-btn-default-light {
-  border-color: $main-app-color;
+  border: 1px solid $main-app-color;
   background-color: transparent;
   color: $main-app-color;
   &:focus {
     color: $main-app-color;
+    border: 1px solid $main-app-color;
   }
   &:hover {
+    border: 1px solid $main-app-color-light;
     background-color: $main-app-color-light;
     color: #fff;
   }
   &:active,
   &.active {
+    border: 1px solid $main-app-color-dark;
     background-color: $main-app-color-dark;
     color: #fff;
   }
 }
 
 .q9-btn-danger-light {
-  border-color: $error-color;
+  border: 1px solid $error-color;
   background-color: transparent;
   color: $error-color;
   &:focus {
+    border: 1px solid $error-color;
     color: $error-color;
   }
   &:hover {
+    border: 1px solid $error-color-light;
     background-color: $error-color-light;
     color: #fff;
   }
   &:active,
   &.active {
+    border: 1px solid $error-color-dark;
     background-color: $error-color-dark;
     color: #fff;
   }
 }
 
 .q9-btn-success-light {
-  border-color: $success-color;
+  border: 1px solid $success-color;
   background-color: transparent;
   color: $success-color;
   &:focus {
+    border: 1px solid $success-color;
     color: $success-color;
   }
   &:hover {
+    border: 1px solid $success-color-light;
     background-color: $success-color-light;
     color: #fff;
   }
   &:active,
   &.active {
+    border: 1px solid $success-color-dark;
     background-color: $success-color-dark;
     color: #fff;
   }
