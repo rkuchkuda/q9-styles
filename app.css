@@ -30,7 +30,7 @@ input[type="search"] {
   height: 30px;
   padding: 5px 10px;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 18px;
   color: #2e4a57;
   background-color: #fff;
   background-image: none;
@@ -154,7 +154,7 @@ textarea.q9-form-control {
 .q9-btn {
   display: inline-block;
   margin-bottom: 0;
-  padding: 14px;
+  padding: 13px 14px 12px;
   font-family: inherit;
   font-size: 13px;
   font-weight: 700;
@@ -320,7 +320,7 @@ fieldset[disabled]
   color: #dce1e4; }
 
 .q9-btn.q9-btn-sm {
-  padding: 8px 16px;
+  padding: 8px 16px 7px;
   font-weight: 500;
   letter-spacing: normal;
   text-transform: none; }
